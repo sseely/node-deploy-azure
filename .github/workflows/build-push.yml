@@ -14,4 +14,6 @@ jobs:
       id: version
       with:
         scheme: calver
-        increment: patch      
+        increment: patch     
+    - name: Apply the version tag
+      run: git tag ${{ steps.version.outputs.version }} ${{ github.sha }}
