@@ -17,3 +17,5 @@ jobs:
         increment: patch     
     - name: Apply the version tag
       run: git tag ${{ steps.version.outputs.version }} ${{ github.sha }}
+    - name: Push the tag
+      run: git push
