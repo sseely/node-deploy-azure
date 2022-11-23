@@ -1,0 +1,17 @@
+on:
+  push
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the PR
+      uses: actions/checkout@v3
+    - name: Get next version
+      uses: reecetech/version-increment@2022.5.1
+      id: version
+      with:
+        scheme: calver
+        increment: patch      
